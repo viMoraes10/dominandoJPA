@@ -66,13 +66,13 @@ public class ClubeController {
             return ResponseEntity.badRequest().body("Request failed: " + e.getMessage());
         }
     }
-}
+} 
 ```
 
 ### Teste de Desempenho
 Realizei a postagem de 77 clubes de futebol e implementei várias técnicas de busca no método `getByEstado`. Os testes revelaram que o método JPQL é o mais eficiente, enquanto o Query Methods teve o pior desempenho.
 
 ### Conclusão
-Explore mais sobre este projeto visitando o [meu repositório do GitHub](URL_DO_SEU_REPOSITORIO). Sua participação é importante, então sinta-se livre para comentar e conectar-se comigo para discussões mais profundas sobre as técnicas usadas.
+Explore mais sobre este projeto visitando o [meu repositório do GitHub](https://github.com/viMoraes10) e [meu LinkedIn](https://www.linkedin.com/in/v1moraes/). 
 
  
