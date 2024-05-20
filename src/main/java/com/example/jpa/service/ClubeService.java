@@ -57,7 +57,7 @@ public class ClubeService {
         maxTime = Math.max(maxTime, timeTaken);
         logger.info("Tempo levado no JPQL: " + timeTaken + "ms");
 
-        // Check the time taken by Native Query
+        // Uso de SQL Nativo
         startTime = System.currentTimeMillis();
         List<Clube> EstadoUsingNative = clubeRepository.findByEstadoUsingNative(estado);
         endTime = System.currentTimeMillis();
@@ -66,7 +66,7 @@ public class ClubeService {
         maxTime = Math.max(maxTime, timeTaken);
         logger.info("Tempo levado no Native Query: " + timeTaken + "ms");
 
-        // Uso de Query Methods
+        // Uso de Query Example
         startTime = System.currentTimeMillis();
         Clube exampleClube = new Clube();
         exampleClube.setEstado("SP");
