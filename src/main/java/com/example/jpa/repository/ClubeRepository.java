@@ -18,7 +18,7 @@ public interface ClubeRepository extends JpaRepository<Clube, Long> {
     List<Clube> findByEstadoUsingJPQL(String estado);
 
 
-    @Query(value = "SELECT * FROM clubes WHERE estado = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM clube WHERE estado = ?1", nativeQuery = true)
     List<Clube> findByEstadoUsingNative(String estado);
 
 

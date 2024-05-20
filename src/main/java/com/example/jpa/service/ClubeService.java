@@ -33,7 +33,7 @@ public class ClubeService {
         return ResponseEntity.ok("Clubes adicionados com sucesso!");
     }
 
-    public ResponseEntity get1(String estado) {
+    public ResponseEntity getByEstado(String estado) {
 
         long startTime, endTime;
         long minTime, maxTime;
@@ -82,6 +82,9 @@ public class ClubeService {
 
     }
 
+    public ResponseEntity getAll() {
+        return ResponseEntity.ok(clubeRepository.findAll());
+    }
 
 
 }

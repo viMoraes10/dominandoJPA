@@ -25,9 +25,18 @@ public class ClubeController {
     }
 
     @GetMapping(value = "/estado/{estado}")
-    public ResponseEntity<?> get1(@PathVariable String estado){
+    public ResponseEntity<?> getByEstado(@PathVariable String estado){
         try{
-            return ResponseEntity.ok(clubeService.get1(estado));
+            return ResponseEntity.ok(clubeService.getByEstado(estado));
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body("Request failed: " + e.getMessage());
+        }
+    }
+
+    @GetMapping(value = "/all")
+    public ResponseEntity<?> getAll(){
+        try{
+            return ResponseEntity.ok(clubeService.getAll());
         }catch (Exception e){
             return ResponseEntity.badRequest().body("Request failed: " + e.getMessage());
         }
