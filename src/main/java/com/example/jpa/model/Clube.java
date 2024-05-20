@@ -2,11 +2,9 @@ package com.example.jpa.model;
 
 import com.example.jpa.dto.ClubeDTO;
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.Date;
 
-@Data
 @Table(name = "clube")
 @Entity
 public class Clube {

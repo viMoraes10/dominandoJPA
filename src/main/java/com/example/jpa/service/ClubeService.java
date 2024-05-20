@@ -39,23 +39,23 @@ public class ClubeService {
         long minTime, maxTime;
         long timeTaken;
 
-        // Initialize minTime and maxTime with the first query
+        // Uso de Query Methods
         startTime = System.currentTimeMillis();
         List<Clube> QueryMethods = clubeRepository.findByEstado(estado);
         endTime = System.currentTimeMillis();
         timeTaken = endTime - startTime;
         minTime = timeTaken;
         maxTime = timeTaken;
-        logger.info("Time taken by Query Methods: " + timeTaken + "ms");
+        logger.info("Tempo levado no Query Methods: " + timeTaken + "ms");
 
-        // Check the time taken by JPQL
+        //  Uso de JPQL (Java Persistence Query Language)
         startTime = System.currentTimeMillis();
         List<Clube> EstadoUsingJPQL = clubeRepository.findByEstadoUsingJPQL(estado);
         endTime = System.currentTimeMillis();
         timeTaken = endTime - startTime;
         minTime = Math.min(minTime, timeTaken);
         maxTime = Math.max(maxTime, timeTaken);
-        logger.info("Time taken by JPQL: " + timeTaken + "ms");
+        logger.info("Tempo levado no JPQL: " + timeTaken + "ms");
 
         // Check the time taken by Native Query
         startTime = System.currentTimeMillis();
@@ -64,9 +64,9 @@ public class ClubeService {
         timeTaken = endTime - startTime;
         minTime = Math.min(minTime, timeTaken);
         maxTime = Math.max(maxTime, timeTaken);
-        logger.info("Time taken by Native Query: " + timeTaken + "ms");
+        logger.info("Tempo levado no Native Query: " + timeTaken + "ms");
 
-        // Check the time taken by Example
+        // Uso de Query Methods
         startTime = System.currentTimeMillis();
         Clube exampleClube = new Clube();
         exampleClube.setEstado("SP");
@@ -76,7 +76,7 @@ public class ClubeService {
         timeTaken = endTime - startTime;
         minTime = Math.min(minTime, timeTaken);
         maxTime = Math.max(maxTime, timeTaken);
-        logger.info("Time taken by Example: " + timeTaken + "ms");
+        logger.info("Tempo levado no Example: " + timeTaken + "ms");
 
         return ResponseEntity.ok("Minimum time: " + minTime + "ms, Maximum time: " + maxTime + "ms");
 
