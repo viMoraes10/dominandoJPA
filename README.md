@@ -1,4 +1,6 @@
- ### Introdução
+### Dominando o JPA: Estratégias Eficientes para Buscar Dados em Java
+
+### Introdução
 Você já se perguntou qual é a melhor forma de buscar informações em um banco de dados usando Java Persistence API (JPA)? Neste projeto, exploraremos técnicas que podem significativamente melhorar o desempenho do seu software. Uma simples busca no banco de dados, quando executada corretamente, pode aumentar a velocidade do seu software em mais de 100%.
 
 #### O que é Java Persistence API (JPA)?
