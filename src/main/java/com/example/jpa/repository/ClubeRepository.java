@@ -13,13 +13,10 @@ public interface ClubeRepository extends JpaRepository<Clube, Long> {
 
     List<Clube> findByEstado(String estado);
 
-
     @Query("SELECT c FROM Clube c WHERE c.estado = ?1")
     List<Clube> findByEstadoUsingJPQL(String estado);
 
-
     @Query(value = "SELECT * FROM clube WHERE estado = ?1", nativeQuery = true)
     List<Clube> findByEstadoUsingNative(String estado);
-
 
 }
